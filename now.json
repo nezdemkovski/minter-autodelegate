@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "public": false,
+  "scope": "yakovlevyuri",
+  "regions": ["all"],
+  "builds": [{ "src": "src/index.ts", "use": "@now/node" }],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "src/index.ts"
+    }
+  ],
+  "env": {
+    "PRIVATE_KEY": "@minter-autodelegate-private-key",
+    "VALIDATOR_PUBLIC_KEY": "@minter-autodelegate-validator-public-key",
+    "MAINNET_URL": "@minter-autodelegate-mainnet-url",
+    "MY_PUBLIC_KEY": "@minter-autodelegate-my-public-key"
+  }
+}

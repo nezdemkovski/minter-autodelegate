@@ -1,0 +1,29 @@
+{
+  "name": "minter-autodelegate",
+  "version": "1.0.0",
+  "description": "Minter Autodelegate",
+  "main": "src/index.ts",
+  "author": "Yuri Yakovlev <hi@mynameisyuri.com> (https://mynameisyuri.com/)",
+  "homepage": "https://github.com/yakovlevyuri/minter-autodelegate",
+  "dependencies": {
+    "dotenv-cli": "^2.0.1",
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "minter-js-sdk": "^0.19.1",
+    "minterjs-wallet": "^4.0.1"
+  },
+  "devDependencies": {
+    "@now/node": "^0.12.6",
+    "@zeit/ncc": "^0.20.4",
+    "debug": "^4.1.1",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  },
+  "scripts": {
+    "dev": "DEBUG=bot* dotenv -- nodemon -e ts -x ts-node src/index.ts",
+    "build": "ncc build src/index.ts -o dist -m",
+    "prettier": "prettier --single-quote --trailing-comma all --write 'src/**/*.ts'"
+  }
+}
