@@ -67,7 +67,7 @@ export default async (_req: NowRequest, res: NowResponse) => {
       return res
         .status(200)
         .send(
-          `Succesfully delegated. Transaction: https://explorer.minter.network/transactions/${response}`
+          `Succesfully delegated to ${VALIDATOR_PUBLIC_KEY}. Transaction: https://explorer.minter.network/transactions/${response}`
         );
     } catch (error) {
       return res.status(500).send(`Something bad happened: ${error}`);
@@ -76,5 +76,7 @@ export default async (_req: NowRequest, res: NowResponse) => {
 
   res
     .status(200)
-    .send(`Not enough BIP to delegate! Current amount: ${balance}`);
+    .send(
+      `Not enough BIP to delegate to ${VALIDATOR_PUBLIC_KEY}! Current amount: ${balance}`
+    );
 };
